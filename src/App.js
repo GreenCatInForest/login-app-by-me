@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 export const App = () => {
+  const [loginSuccess, setLoginSuccess] = useState("");
+
   return (
     <div>
       <div>Login form</div>
