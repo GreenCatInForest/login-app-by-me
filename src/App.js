@@ -1,14 +1,19 @@
 import React from "react";
 import { useState } from "react";
 
+import { Login } from "./components/Login";
+
 export const App = () => {
-  const [loginSuccess, setLoginSuccess] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
+
+  const loginPasswordMatch = () => {
+    setLoginSuccess(true);
+  };
 
   return (
     <div>
       <div>Login form</div>
       <div>Enter your e-mail and password to log in, please </div>
-
       <form>
         <label>
           E-mail
@@ -20,6 +25,7 @@ export const App = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
+      {!loginSuccess ? <Login /> : "Hello" + { email }}
     </div>
   );
 };
